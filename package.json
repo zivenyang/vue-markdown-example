@@ -27,7 +27,6 @@
     "@mdit/plugin-tasklist": "^0.22.0",
     "markdown-it": "^14.1.0",
     "markdown-it-emoji": "^3.0.0",
-    "markdown-it-mathjax": "^2.0.0",
     "markdown-it-mathjax3": "^4.3.2",
     "mermaid": "^11.6.0",
     "vue": "^3.5.13"
