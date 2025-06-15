@@ -6,7 +6,7 @@ import { ref } from 'vue'
 const content = ref('加载中...')
 
 const baseUrl = import.meta.env.VITE_BASE_URL || '/'
-fetch(`${baseUrl}src/assets/markdown-it-example.md`)
+fetch(`${baseUrl}markdown-it-example.md`)
   .then(res => {
     if (!res.ok) {
         throw new Error(`HTTP error! status: ${res.status}`)
