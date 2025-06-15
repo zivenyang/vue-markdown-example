@@ -26,6 +26,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    env:
       VITE_BASE_URL: /vue-markdown-example/
     runs-on: ubuntu-latest
     steps:
