@@ -1,14 +1,28 @@
 <script setup lang="ts">
 import MarkdownItRender from './components/MarkdownItRender.vue'
+import { ref, nextTick } from 'vue'
+
+// 由于直接导入 .md 文件会报错（找不到模块），这里我们使用 fetch 异步加载 markdown 文件内容
+const content = ref('加载中...')
+
+fetch('/src/assets/vitepress-markdown-example.md')
+  .then(res => {
+    if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`)
+    }
+    return res.text()
+  })
+  .then(text => {
+    content.value = text
+  })
+  .catch(err => {
+    content.value = '加载 Markdown 文件失败: ' + err.message
+  })
 </script>
 
 <template>
-  <header>
-
-  </header>
-
   <main>
-    <MarkdownItRender content="## Hello World" />
+    <MarkdownItRender :content="content" />
   </main>
 </template>
 

@@ -2,7 +2,7 @@
     <div v-html="html"></div>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import MarkdownIt from 'markdown-it'
 
 const props = defineProps<{
@@ -11,5 +11,6 @@ const props = defineProps<{
 
 const md = new MarkdownIt()
 
-const html = ref(md.render(props.content))
+const html = computed(() => md.render(props.content))
+
 </script>
