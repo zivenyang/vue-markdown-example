@@ -5,7 +5,7 @@ import { ref, nextTick } from 'vue'
 // 由于直接导入 .md 文件会报错（找不到模块），这里我们使用 fetch 异步加载 markdown 文件内容
 const content = ref('加载中...')
 
-fetch('/src/assets/vitepress-markdown-example.md')
+fetch('/src/assets/markdown-it-example.md')
   .then(res => {
     if (!res.ok) {
         throw new Error(`HTTP error! status: ${res.status}`)
