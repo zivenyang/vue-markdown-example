@@ -1,5 +1,5 @@
 <template>
-    <div v-html="html"></div>
+    <div v-html="html" class="dark"></div>
 </template>
 <script setup lang="ts">
 import { computed, nextTick, onMounted, ref, watch } from 'vue'
@@ -23,6 +23,10 @@ import "@mdit/plugin-spoiler/style"
 import { tab } from "@mdit/plugin-tab";
 import mathjax3 from "markdown-it-mathjax3";
 import mermaid from 'mermaid';
+import highlightjs from 'markdown-it-highlightjs';
+import hljs from 'highlight.js';
+import "highlight.js/styles/github-dark.css"
+import "@/assets/markdownit.css"
 
 
 
@@ -53,6 +57,7 @@ mdIt.use(tasklist)
     .use(spoiler)
     .use(tab, { name: "tabs" })
     .use(mathjax3)
+    .use(highlightjs, { hljs })
 
 const defaultFenceRenderer = mdIt.renderer.rules.fence!;
 mdIt.renderer.rules.fence = (tokens, idx, options, env, self) => {
