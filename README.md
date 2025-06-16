@@ -2,6 +2,8 @@
 
 一个简单的vue3 + markdown-it示例
 
+[Demo](https://zivenyang.github.io/vue-markdown-example/)
+
 ## 特性
 - [x] markdown-it 
 - [x] @mdit/plugin-abbr 
